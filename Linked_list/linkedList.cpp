@@ -11,18 +11,18 @@ struct node* tail = NULL;
 
 void insert(int n){
     struct node* newNode = (struct node*)malloc(sizeof(struct node));
-    newNode->val = n;
-    newNode->next = NULL;
+    newNode->val = n;            
+    newNode->next = NULL;   //1,NULL
     if(head==NULL)
     {
-        head = newNode;
-        tail = newNode;
+        head = newNode;     //head -> 1,NULL 
+        tail = newNode;    //tail ----|
     }
     else
     {
-        tail->next = newNode;
-        tail = tail->next;
-    }
+        tail->next = newNode;  //head -> 1,next -> 2,next->NULL
+        tail = tail->next;               //tail ----|
+    }                          //Head will remain at the start and tail will reach the end
 }
 
 void display(){
