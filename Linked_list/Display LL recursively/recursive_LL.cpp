@@ -34,7 +34,7 @@ void display(struct node* head){
     {
         cout<<temp->val<<" "; 
         display(temp->next);       //recursion display function
-    //  cout<<temp->val<<" ";     //call recursion before print to print in reverse directiom
+    //  cout<<temp->val<<" ";     //call print after recursion to print in reverse directiom
     }
 }
 
