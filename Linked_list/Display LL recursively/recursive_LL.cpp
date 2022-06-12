@@ -41,11 +41,18 @@ void display(struct node* head){
 
 int main(){
 
-    insert(1);
-    insert(2);
-    insert(3);
-    insert(4);
-    insert(5);
+    int n;
+    cout<<"Enter number of elements: ";
+    cin>>n;
+
+    for(int i=1;i<=n;i++)
+    {
+        int m;
+        cout<<"enter element number "<<i<<" : ";
+        cin>>m;
+        insert(m);
+    }
+
 
     display(head);
 
