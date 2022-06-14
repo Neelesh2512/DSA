@@ -9,6 +9,7 @@ struct node{
 struct node* head = NULL;
 struct node* tail = NULL;
 
+//Insert Element
 void insert(int n){
     struct node* newNode = (struct node*)malloc(sizeof(struct node));
     newNode->val = n;
@@ -26,6 +27,7 @@ void insert(int n){
 
 }
 
+//Display Linked List
 void display(struct node* head){
 
     struct node* temp = head;
@@ -38,6 +40,56 @@ void display(struct node* head){
     }
 }
 
+//Count elements of linked list
+int count(struct node* head){
+    struct node* temp = head;
+    int length = 0;
+
+    while(temp!=NULL)
+    {
+        length++;
+        temp = temp->next;
+    }
+
+    return length;
+}
+
+//Count total sum of linked list elements
+int sum(struct node* head)
+{
+    struct node* temp = head;
+    int total = 0;
+    while(temp != NULL)
+    {
+        total += temp->val;
+        temp = temp->next;
+    }
+    return total;
+}
+
+//count Max element in linked list
+int maxElement(struct node* head)
+{
+    struct node* temp = head;
+    int ans = 0;
+    while(temp!=NULL)
+    {
+        ans = max(ans,temp->val);
+        temp = temp->next;
+    }
+    return ans;
+}
+
+//Find Element in the linked list
+bool search(struct node* head, int key)
+{
+    struct node* temp = head;
+    while(temp!=NULL)
+    {
+        if(temp->val==key)return true;
+    }
+    return false;
+}
 
 int main(){
 
@@ -54,6 +106,18 @@ int main(){
     }
 
 
+    cout<<"Linked List : ";
     display(head);
 
+    int length = count(head);
+    cout<<"\nLength of Linked List : "<<length;
+
+    int total = sum(head);
+    cout<<"\nSum of Linked List : "<<total;
+
+    int maxEle = maxElement(head);
+    cout<<"\nMax element in Linked List : "<<maxEle;
+
+    bool find = search(head,5);
+    cout<<"Find : "<<find;
 }
